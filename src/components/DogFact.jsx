@@ -1,10 +1,15 @@
-// DogFact Component
-export const DogFact = () => {
-  // Hint: Extract the 'body' from 'attributes' of the 'fact' prop
+export const DogFact = ({ fact , loading }) => {
 
-  // Hint: Render the 'cleanFact' if available, otherwise show a loading message
-  return <div>dog fact here.</div>;
-};
 
-// Hint: To use this component, import it in your main App component and pass the 'fact' prop to it.
-// Example: <DogFact fact={yourFactData} />
+  const cleanFact = loading ? "Loading..." : fact[0].attributes.body
+  
+  
+    
+    return (
+      <div className="card text-center">
+        <h1 className="card-header">dog facts</h1>
+        <p className="card-text">{cleanFact}</p>
+      </div>
+    );
+  };
+
